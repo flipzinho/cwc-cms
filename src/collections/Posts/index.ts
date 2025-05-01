@@ -86,6 +86,15 @@ export const Posts: CollectionConfig<'posts'> = {
               relationTo: 'media',
             },
             {
+              name: 'blocks',
+              type: 'blocks',
+              blocks: [MediaBlock, QuoteBlock], // Adicione todos os blocos aqui
+              required: false,
+              admin: {
+                initCollapsed: false,
+              },
+            },
+            {
               name: 'content',
               type: 'richText',
               editor: lexicalEditor({

@@ -21,6 +21,7 @@ import type {
 import { BannerBlock } from '@/blocks/Banner/Component'
 import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { cn } from '@/utilities/ui'
+import { QuoteBlock } from '@/blocks/Quote/Component'
 
 type NodeTypes =
   | DefaultNodeTypes
@@ -52,12 +53,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     ),
     code: ({ node }) => <CodeBlock className="col-start-2" {...node.fields} />,
     cta: ({ node }) => <CallToActionBlock {...node.fields} />,
-    quote: ({ node }) => (
-      <blockquote className="border-l-4 pl-4 italic text-gray-700">
-        <RichText data={node.fields.quoteText} />
-        {node.fields.author && <footer className="mt-2 text-right">— {node.fields.author}</footer>}
-      </blockquote>
-    ),
+    quote: ({ node }) => <QuoteBlock {...node.fields} />,
   },
 })
 

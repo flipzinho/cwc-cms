@@ -16,7 +16,18 @@ export const QuoteBlock: Block = {
     {
       name: 'author',
       type: 'text',
-      label: 'Author',
+      label: 'Author Name',
+    },
+    {
+      name: 'role',
+      type: 'text',
+      label: 'Author Role',
+    },
+    {
+      name: 'avatar',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Author Avatar',
     },
   ],
 }

@@ -3,6 +3,10 @@ import { lexicalEditor } from '@payloadcms/richtext-lexical'
 
 export const QuoteBlock: Block = {
   slug: 'quote',
+  labels: {
+    singular: 'Quote Block',
+    plural: 'Quote Blocks',
+  },
   fields: [
     {
       name: 'quoteText',

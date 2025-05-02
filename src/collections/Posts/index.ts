@@ -86,28 +86,19 @@ export const Posts: CollectionConfig<'posts'> = {
               relationTo: 'media',
             },
             {
-              name: 'blocks',
-              type: 'blocks',
-              blocks: [MediaBlock, QuoteBlock], // Adicione todos os blocos aqui
-              required: false,
-              admin: {
-                initCollapsed: false,
-              },
-            },
-            {
               name: 'content',
               type: 'richText',
               editor: lexicalEditor({
-                features: ({ rootFeatures }) => {
-                  return [
-                    ...rootFeatures,
-                    HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [Banner, Code, MediaBlock, QuoteBlock] }),
-                    FixedToolbarFeature(),
-                    InlineToolbarFeature(),
-                    HorizontalRuleFeature(),
-                  ]
-                },
+                features: ({ defaultFeatures }) => [
+                  ...defaultFeatures.filter(
+                    (feature) => !['blockquote', 'inlineCode'].includes(feature.key),
+                  ),
+                  HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+                  BlocksFeature({ blocks: [Banner, Code, MediaBlock, QuoteBlock] }),
+                  FixedToolbarFeature(),
+                  InlineToolbarFeature(),
+                  HorizontalRuleFeature(),
+                ],
               }),
               label: false,
               required: true,

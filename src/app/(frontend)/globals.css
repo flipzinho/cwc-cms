@@ -1,4 +1,6 @@
 @import 'remixicon/fonts/remixicon.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/600.css';
 
 @tailwind base;
 @tailwind components;
@@ -104,6 +106,31 @@ html[data-theme='light'] {
   opacity: initial;
 }
 
+/* Global Styles */
+
+p {
+  color: #171717;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.4px;
+  letter-spacing: -0.16px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1440px) {
+  p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  p {
+    font-size: 12px;
+  }
+}
 
 /* Custom Styles for Quote Block */
 

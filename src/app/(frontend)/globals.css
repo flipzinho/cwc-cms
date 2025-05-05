@@ -116,8 +116,13 @@ p {
   font-weight: 400;
   line-height: 22.4px;
   letter-spacing: -0.16px;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.prose p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 @media (max-width: 1440px) {
@@ -160,3 +165,94 @@ p {
     font-size: 12px;
   }
 }
+
+/* Custom Headings Styles */
+/* h1 */
+
+.prose h1 {
+  color: #171717; 
+  font-family: Inter, sans-serif; 
+  font-size: 32px; 
+  font-style: normal;
+  font-weight: 400;
+  line-height: 38.4px; 
+  letter-spacing: -0.32px; 
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  .prose h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .prose h1 {
+    font-size: 24px;
+  }
+}
+
+/* h2 */
+
+.prose h2 {
+  color: #171717;
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28.8px;
+  letter-spacing: -0.24px;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  .prose h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .prose h2 {
+    font-size: 18px;
+  }
+}
+
+/* h3 */
+
+.prose h3 {
+  color: #171717;
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21.6px;
+  letter-spacing: -0.18px;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .prose h3 {
+    font-size: 16px;
+  }
+}
+
+/* a */
+
+.prose a {
+  color: #9A8142;
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22.4px;
+  letter-spacing: -0.16px;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+

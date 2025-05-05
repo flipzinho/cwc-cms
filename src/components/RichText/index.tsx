@@ -22,6 +22,8 @@ import { BannerBlock } from '@/blocks/Banner/Component'
 import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { cn } from '@/utilities/ui'
 import { QuoteBlock } from '@/blocks/Quote/Component'
+import { CalloutBlock } from '@/blocks/Callout/Component'
+import { FeaturesBlock } from '@/blocks/FeaturesBlock/Component'
 
 type NodeTypes =
   | DefaultNodeTypes
@@ -54,6 +56,8 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     code: ({ node }) => <CodeBlock className="col-start-2" {...node.fields} />,
     cta: ({ node }) => <CallToActionBlock {...node.fields} />,
     quote: ({ node }) => <QuoteBlock {...node.fields} />,
+    callout: ({ node }) => <CalloutBlock {...node.fields} />,
+    'features-block': ({ node }) => <FeaturesBlock {...node.fields} />,
   },
 })
 

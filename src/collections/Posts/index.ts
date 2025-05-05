@@ -27,6 +27,8 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 import { slugField } from '@/fields/slug'
+import { Callout } from '@/blocks/Callout/config'
+import { FeaturesBlock } from '@/blocks/FeaturesBlock/Config'
 
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',
@@ -94,7 +96,9 @@ export const Posts: CollectionConfig<'posts'> = {
                     (feature) => !['blockquote', 'inlineCode'].includes(feature.key),
                   ),
                   HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                  BlocksFeature({ blocks: [Banner, Code, MediaBlock, QuoteBlock] }),
+                  BlocksFeature({
+                    blocks: [Banner, Code, MediaBlock, QuoteBlock, Callout, FeaturesBlock],
+                  }),
                   FixedToolbarFeature(),
                   InlineToolbarFeature(),
                   HorizontalRuleFeature(),

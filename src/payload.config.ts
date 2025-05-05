@@ -17,6 +17,7 @@ import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 import { QuoteBlock } from './blocks/Quote/config'
+import { StatementBlock } from './blocks/Statement/config'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -92,5 +93,5 @@ export default buildConfig({
     },
     tasks: [],
   },
-  blocks: [QuoteBlock],
+  blocks: [QuoteBlock, StatementBlock],
 })

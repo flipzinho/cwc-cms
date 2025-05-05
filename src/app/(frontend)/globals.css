@@ -106,6 +106,18 @@ html[data-theme='light'] {
   opacity: initial;
 }
 
+.prose p,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6,
+.prose a {
+  all: unset;
+  /* Ou sobrescreva propriedades específicas conforme necessário */
+}
+
 /* Global Styles */
 
 p {
@@ -113,7 +125,7 @@ p {
   font-family: Inter, sans-serif;
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: unset;
   line-height: 22.4px;
   letter-spacing: -0.16px;
   margin-top: 0 !important;
@@ -254,5 +266,49 @@ p {
   text-decoration-thickness: auto;
   text-underline-offset: auto;
   text-underline-position: from-font;
+  cursor: auto;
+}
+
+/* Statement Component Styles */
+.statement {
+  color: #171717;
+  font-family: Inter, sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;;
+  letter-spacing: -0.64px;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  .statement {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 764px) {
+  .statement {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  .statement {
+    font-size: 32px;
+  }
+}
+
+/* BannerBlock Title Style */
+.bannerblock-title {
+  color: #FFF !important;
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 38.4px; /* 120% */
+  letter-spacing: -0.32px;
 }
 

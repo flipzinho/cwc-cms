@@ -8,6 +8,8 @@ import { ContentBlock } from '@/blocks/Content/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { QuoteBlock } from '@/blocks/Quote/Component'
+import { StatementBlock } from '@/blocks/Statement/Component'
+import { BannerBlock as BannerBlockComponent } from '@/blocks/BannerBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -16,6 +18,8 @@ const blockComponents = {
   formBlock: FormBlock,
   mediaBlock: MediaBlock,
   quote: QuoteBlock,
+  statement: StatementBlock,
+  bannerBlock: BannerBlockComponent,
 }
 
 export const RenderBlocks: React.FC<{

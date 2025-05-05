@@ -12,6 +12,7 @@ import {
 } from '@payloadcms/richtext-lexical/react'
 
 import { CodeBlock, CodeBlockProps } from '@/blocks/Code/Component'
+import { StatementBlock as StatementBlockComponent } from '@/blocks/Statement/Component'
 
 import type {
   BannerBlock as BannerBlockProps,
@@ -24,6 +25,7 @@ import { cn } from '@/utilities/ui'
 import { QuoteBlock } from '@/blocks/Quote/Component'
 import { CalloutBlock } from '@/blocks/Callout/Component'
 import { FeaturesBlock } from '@/blocks/FeaturesBlock/Component'
+import { BannerBlock as BannerBlockComponent } from '@/blocks/BannerBlock/Component'
 
 type NodeTypes =
   | DefaultNodeTypes
@@ -42,7 +44,6 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
   ...defaultConverters,
   ...LinkJSXConverter({ internalDocToHref }),
   blocks: {
-    banner: ({ node }) => <BannerBlock className="col-start-2 mb-4" {...node.fields} />,
     mediaBlock: ({ node }) => (
       <MediaBlock
         className="col-start-1 col-span-3"
@@ -58,6 +59,9 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     quote: ({ node }) => <QuoteBlock {...node.fields} />,
     callout: ({ node }) => <CalloutBlock {...node.fields} />,
     'features-block': ({ node }) => <FeaturesBlock {...node.fields} />,
+    statement: ({ node }) => <StatementBlockComponent {...node.fields} />,
+    banner: ({ node }) => <BannerBlock className="col-start-2 mb-4" {...node.fields} />,
+    bannerBlock: ({ node }) => <BannerBlockComponent {...node.fields} />,
   },
 })
 

@@ -67,6 +67,7 @@ export interface Config {
   };
   blocks: {
     quote: Quote;
+    statement: Statement;
   };
   collections: {
     pages: Page;
@@ -261,6 +262,30 @@ export interface Media {
       filename?: string | null;
     };
   };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "statement".
+ */
+export interface Statement {
+  text: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'statement';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1729,25 +1754,11 @@ export interface TaskSchedulePublish {
  * via the `definition` "BannerBlock".
  */
 export interface BannerBlock {
-  style: 'info' | 'warning' | 'error' | 'success';
-  content: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
+  image: string | Media;
+  alt: string;
   id?: string | null;
   blockName?: string | null;
-  blockType: 'banner';
+  blockType: 'bannerBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

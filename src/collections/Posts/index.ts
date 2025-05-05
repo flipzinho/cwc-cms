@@ -29,6 +29,8 @@ import {
 import { slugField } from '@/fields/slug'
 import { Callout } from '@/blocks/Callout/config'
 import { FeaturesBlock } from '@/blocks/FeaturesBlock/Config'
+import { StatementBlock } from '@/blocks/Statement/config'
+import { BannerBlock } from '@/blocks/BannerBlock/config'
 
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',
@@ -97,7 +99,15 @@ export const Posts: CollectionConfig<'posts'> = {
                   ),
                   HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
                   BlocksFeature({
-                    blocks: [Banner, Code, MediaBlock, QuoteBlock, Callout, FeaturesBlock],
+                    blocks: [
+                      BannerBlock,
+                      Code,
+                      MediaBlock,
+                      QuoteBlock,
+                      Callout,
+                      FeaturesBlock,
+                      StatementBlock,
+                    ],
                   }),
                   FixedToolbarFeature(),
                   InlineToolbarFeature(),

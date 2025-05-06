@@ -13,6 +13,7 @@ import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateDelete, revalidatePage } from './hooks/revalidatePage'
 import { QuoteBlock } from '@/blocks/Quote/config'
+import { ParallaxTitleBlock } from '@/blocks/ParallaxTitleBlock/config'
 
 import {
   MetaDescriptionField,
@@ -76,7 +77,15 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, QuoteBlock],
+              blocks: [
+                CallToAction,
+                Content,
+                MediaBlock,
+                Archive,
+                FormBlock,
+                QuoteBlock,
+                ParallaxTitleBlock,
+              ],
               required: true,
               admin: {
                 initCollapsed: true,

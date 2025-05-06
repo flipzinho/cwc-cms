@@ -4,8 +4,8 @@ export const BannerBlock: Block = {
   slug: 'bannerBlock',
   interfaceName: 'BannerBlock',
   labels: {
-    singular: 'Banner Block',
-    plural: 'Banner Blocks',
+    singular: 'Full Banner',
+    plural: 'Full Banners',
   },
   fields: [
     {

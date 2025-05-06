@@ -32,6 +32,7 @@ import { FeaturesBlock } from '@/blocks/FeaturesBlock/Config'
 import { StatementBlock } from '@/blocks/Statement/config'
 import { BannerBlock } from '@/blocks/BannerBlock/config'
 import { AccordionBlock } from '@/blocks/Accordion/Config'
+import { ParallaxTitleBlock } from '@/blocks/ParallaxTitleBlock/config'
 
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',
@@ -102,13 +103,13 @@ export const Posts: CollectionConfig<'posts'> = {
                   BlocksFeature({
                     blocks: [
                       BannerBlock,
-                      Code,
                       MediaBlock,
                       QuoteBlock,
                       Callout,
                       FeaturesBlock,
                       StatementBlock,
                       AccordionBlock,
+                      ParallaxTitleBlock,
                     ],
                   }),
                   FixedToolbarFeature(),

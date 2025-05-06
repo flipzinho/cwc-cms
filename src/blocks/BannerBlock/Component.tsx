@@ -29,6 +29,7 @@ export const BannerBlock: React.FC<Props> = ({ image, alt, content }) => {
               max-[375px]:max-w-[295px] // extra small (<=375px)
               absolute left-1/2 top-0
               -translate-x-1/2
+              not-prose
             "
             style={{
               height: '100%',

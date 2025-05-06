@@ -366,6 +366,7 @@ export interface Page {
         blockName?: string | null;
         blockType: 'quote';
       }
+    | ParallaxTitleBlock
   )[];
   meta?: {
     title?: string | null;
@@ -812,6 +813,17 @@ export interface Form {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ParallaxTitleBlock".
+ */
+export interface ParallaxTitleBlock {
+  backgroundImage: string | Media;
+  title: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'parallaxTitleBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1110,6 +1122,7 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        parallaxTitleBlock?: T | ParallaxTitleBlockSelect<T>;
       };
   meta?:
     | T
@@ -1206,6 +1219,16 @@ export interface FormBlockSelect<T extends boolean = true> {
   form?: T;
   enableIntro?: T;
   introContent?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ParallaxTitleBlock_select".
+ */
+export interface ParallaxTitleBlockSelect<T extends boolean = true> {
+  backgroundImage?: T;
+  title?: T;
   id?: T;
   blockName?: T;
 }
@@ -1759,17 +1782,6 @@ export interface BannerBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'bannerBlock';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "CodeBlock".
- */
-export interface CodeBlock {
-  language?: ('typescript' | 'javascript' | 'css') | null;
-  code: string;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'code';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

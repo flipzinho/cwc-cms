@@ -10,6 +10,7 @@ import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { QuoteBlock } from '@/blocks/Quote/Component'
 import { StatementBlock } from '@/blocks/Statement/Component'
 import { BannerBlock as BannerBlockComponent } from '@/blocks/BannerBlock/Component'
+import { ParallaxTitleBlock } from './ParallaxTitleBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -20,6 +21,7 @@ const blockComponents = {
   quote: QuoteBlock,
   statement: StatementBlock,
   bannerBlock: BannerBlockComponent,
+  parallaxTitleBlock: ParallaxTitleBlock,
 }
 
 export const RenderBlocks: React.FC<{

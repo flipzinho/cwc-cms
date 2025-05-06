@@ -26,6 +26,7 @@ import { QuoteBlock } from '@/blocks/Quote/Component'
 import { CalloutBlock } from '@/blocks/Callout/Component'
 import { FeaturesBlock } from '@/blocks/FeaturesBlock/Component'
 import { BannerBlock as BannerBlockComponent } from '@/blocks/BannerBlock/Component'
+import { AccordionBlock as AccordionBlockComponent } from '@/blocks/Accordion/Component'
 
 type NodeTypes =
   | DefaultNodeTypes
@@ -62,6 +63,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     statement: ({ node }) => <StatementBlockComponent {...node.fields} />,
     banner: ({ node }) => <BannerBlock className="col-start-2 mb-4" {...node.fields} />,
     bannerBlock: ({ node }) => <BannerBlockComponent {...node.fields} />,
+    accordion: ({ node }) => <AccordionBlockComponent {...node.fields} />,
   },
 })
 

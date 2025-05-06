@@ -266,7 +266,7 @@ p {
   text-decoration-thickness: auto;
   text-underline-offset: auto;
   text-underline-position: from-font;
-  cursor: auto;
+  cursor: pointer;
 }
 
 /* Statement Component Styles */

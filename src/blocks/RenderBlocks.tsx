@@ -11,6 +11,8 @@ import { QuoteBlock } from '@/blocks/Quote/Component'
 import { StatementBlock } from '@/blocks/Statement/Component'
 import { BannerBlock as BannerBlockComponent } from '@/blocks/BannerBlock/Component'
 import { ParallaxTitleBlock } from './ParallaxTitleBlock/Component'
+import { TableBlock as TableBlockComponent } from './Table/Component'
+import { DividerBlock as DividerBlockComponent } from '@/blocks/Divider/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -22,6 +24,8 @@ const blockComponents = {
   statement: StatementBlock,
   bannerBlock: BannerBlockComponent,
   parallaxTitleBlock: ParallaxTitleBlock,
+  table: TableBlockComponent,
+  divider: DividerBlockComponent,
 }
 
 export const RenderBlocks: React.FC<{

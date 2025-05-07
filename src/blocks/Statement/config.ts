@@ -1,10 +1,4 @@
 import type { Block } from 'payload'
-import {
-  lexicalEditor,
-  HeadingFeature,
-  FixedToolbarFeature,
-  InlineToolbarFeature,
-} from '@payloadcms/richtext-lexical'
 
 export const StatementBlock: Block = {
   slug: 'statement',
@@ -15,17 +9,9 @@ export const StatementBlock: Block = {
   fields: [
     {
       name: 'text',
-      type: 'richText',
+      type: 'textarea', // alterado de 'text' para 'textarea' para editor simplificado
       required: true,
       label: 'Statement Text',
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => [
-          ...rootFeatures,
-          HeadingFeature({ enabledHeadingSizes: ['h1'] }),
-          FixedToolbarFeature(),
-          InlineToolbarFeature(),
-        ],
-      }),
     },
   ],
 }

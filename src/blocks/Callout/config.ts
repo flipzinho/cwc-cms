@@ -1,5 +1,4 @@
 import type { Block } from 'payload'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
 
 export const Callout: Block = {
   slug: 'callout',
@@ -10,21 +9,15 @@ export const Callout: Block = {
   fields: [
     {
       name: 'title',
-      type: 'richText',
+      type: 'text',
       label: 'Optional Title',
       required: false,
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => [...rootFeatures],
-      }),
     },
     {
       name: 'content',
-      type: 'richText',
+      type: 'text',
       label: 'Content',
       required: true,
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => [...rootFeatures],
-      }),
     },
     {
       name: 'icon',

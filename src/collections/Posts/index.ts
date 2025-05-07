@@ -33,6 +33,8 @@ import { StatementBlock } from '@/blocks/Statement/config'
 import { BannerBlock } from '@/blocks/BannerBlock/config'
 import { AccordionBlock } from '@/blocks/Accordion/Config'
 import { ParallaxTitleBlock } from '@/blocks/ParallaxTitleBlock/config'
+import { TableBlock } from '@/blocks/Table/config'
+import { DividerBlock } from '@/blocks/Divider/config'
 
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',
@@ -110,6 +112,8 @@ export const Posts: CollectionConfig<'posts'> = {
                       StatementBlock,
                       AccordionBlock,
                       ParallaxTitleBlock,
+                      TableBlock,
+                      DividerBlock,
                     ],
                   }),
                   FixedToolbarFeature(),

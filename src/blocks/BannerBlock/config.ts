@@ -18,7 +18,7 @@ export const BannerBlock: Block = {
     {
       name: 'alt',
       type: 'text',
-      required: true,
+      required: false,
       label: 'Alt text centralizado',
     },
   ],

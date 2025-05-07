@@ -19,7 +19,7 @@ export const QuoteBlock: React.FC<QuoteBlockProps> = ({ quoteText, author, role,
         rounded-xl
         border border-solid border-[#bebebe]
         bg-[#f8f8f8]
-        w-full
+        w-[90%]
         max-w-[824px]
         mx-auto
         self-stretch

@@ -268,21 +268,7 @@ export interface Media {
  * via the `definition` "statement".
  */
 export interface Statement {
-  text: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
+  text: string;
   id?: string | null;
   blockName?: string | null;
   blockType: 'statement';
@@ -1778,10 +1764,163 @@ export interface TaskSchedulePublish {
  */
 export interface BannerBlock {
   image: string | Media;
-  alt: string;
+  alt?: string | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'bannerBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TableBlock".
+ */
+export interface TableBlock {
+  columns: {
+    header: string;
+    id?: string | null;
+  }[];
+  rows: {
+    cells?:
+      | {
+          type: 'text' | 'number' | 'chip' | 'date' | 'views' | 'growth' | 'author';
+          textSubtype?: ('bold' | 'medium' | 'normal') | null;
+          statusType?: ('neutral' | 'success' | 'warning' | 'error' | 'cwc' | 'ww') | null;
+          showDot?: boolean | null;
+          preIcon?:
+            | (
+                | ''
+                | 'ri-star-line'
+                | 'ri-rocket-line'
+                | 'ri-lightbulb-line'
+                | 'ri-heart-line'
+                | 'ri-check-line'
+                | 'ri-user-line'
+                | 'ri-settings-line'
+                | 'ri-search-line'
+                | 'ri-camera-line'
+                | 'ri-phone-line'
+                | 'ri-mail-line'
+                | 'ri-calendar-line'
+                | 'ri-map-line'
+                | 'ri-lock-line'
+                | 'ri-bell-line'
+                | 'ri-chat-line'
+                | 'ri-cloud-line'
+                | 'ri-download-line'
+                | 'ri-upload-line'
+                | 'ri-folder-line'
+                | 'ri-edit-line'
+                | 'ri-delete-line'
+                | 'ri-save-line'
+                | 'ri-play-line'
+                | 'ri-pause-line'
+                | 'ri-stop-line'
+                | 'ri-arrow-up-line'
+                | 'ri-arrow-down-line'
+                | 'ri-arrow-left-line'
+                | 'ri-arrow-right-line'
+                | 'ri-book-line'
+                | 'ri-bookmark-line'
+                | 'ri-briefcase-line'
+                | 'ri-building-line'
+                | 'ri-car-line'
+                | 'ri-clipboard-line'
+                | 'ri-clock-line'
+                | 'ri-compass-line'
+                | 'ri-dashboard-line'
+                | 'ri-database-line'
+                | 'ri-earth-line'
+                | 'ri-eye-line'
+                | 'ri-flag-line'
+                | 'ri-globe-line'
+                | 'ri-hand-line'
+                | 'ri-headphone-line'
+                | 'ri-inbox-line'
+                | 'ri-key-line'
+                | 'ri-leaf-line'
+                | 'ri-link-line'
+                | 'ri-list-line'
+                | 'ri-map-pin-line'
+              )
+            | null;
+          postIcon?:
+            | (
+                | ''
+                | 'ri-star-line'
+                | 'ri-rocket-line'
+                | 'ri-lightbulb-line'
+                | 'ri-heart-line'
+                | 'ri-check-line'
+                | 'ri-user-line'
+                | 'ri-settings-line'
+                | 'ri-search-line'
+                | 'ri-camera-line'
+                | 'ri-phone-line'
+                | 'ri-mail-line'
+                | 'ri-calendar-line'
+                | 'ri-map-line'
+                | 'ri-lock-line'
+                | 'ri-bell-line'
+                | 'ri-chat-line'
+                | 'ri-cloud-line'
+                | 'ri-download-line'
+                | 'ri-upload-line'
+                | 'ri-folder-line'
+                | 'ri-edit-line'
+                | 'ri-delete-line'
+                | 'ri-save-line'
+                | 'ri-play-line'
+                | 'ri-pause-line'
+                | 'ri-stop-line'
+                | 'ri-arrow-up-line'
+                | 'ri-arrow-down-line'
+                | 'ri-arrow-left-line'
+                | 'ri-arrow-right-line'
+                | 'ri-book-line'
+                | 'ri-bookmark-line'
+                | 'ri-briefcase-line'
+                | 'ri-building-line'
+                | 'ri-car-line'
+                | 'ri-clipboard-line'
+                | 'ri-clock-line'
+                | 'ri-compass-line'
+                | 'ri-dashboard-line'
+                | 'ri-database-line'
+                | 'ri-earth-line'
+                | 'ri-eye-line'
+                | 'ri-flag-line'
+                | 'ri-globe-line'
+                | 'ri-hand-line'
+                | 'ri-headphone-line'
+                | 'ri-inbox-line'
+                | 'ri-key-line'
+                | 'ri-leaf-line'
+                | 'ri-link-line'
+                | 'ri-list-line'
+                | 'ri-map-pin-line'
+              )
+            | null;
+          value?: string | null;
+          percent?: number | null;
+          name?: string | null;
+          role?: string | null;
+          media?: (string | null) | Media;
+          id?: string | null;
+        }[]
+      | null;
+    id?: string | null;
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'table';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "DividerBlock".
+ */
+export interface DividerBlock {
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'divider';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

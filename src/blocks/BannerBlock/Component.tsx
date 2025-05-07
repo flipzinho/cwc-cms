@@ -23,7 +23,7 @@ export const BannerBlock: React.FC<Props> = ({ image, alt, content }) => {
               object-cover h-full rounded
               w-full
               max-w-[1280px]    // desktop (>=1280px)
-              lg:max-w-[896px]  // large (>=1024px)
+              lg:max-w-[1280px]  // large (>=1024px)
               md:max-w-[640px]  // medium (>=768px)
               sm:max-w-full     // small (<768px)
               max-[375px]:max-w-[295px] // extra small (<=375px)

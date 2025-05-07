@@ -86,7 +86,7 @@ export const AccordionBlock: React.FC<Props> = ({ items = [], className }) => {
                   )}
                   <div className="!mx-0 w-full prose prose-neutral max-w-none">
                     {/* O RichText já renderiza <p>, então só precisa da classe .prose */}
-                    <RichText data={item.content} enableGutter={false} />
+                    <RichText data={item.content} enableGutter={false} className="not-prose" />
                   </div>
                 </div>
               )}

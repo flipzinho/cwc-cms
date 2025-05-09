@@ -27,11 +27,6 @@ export const TableBlock: Block = {
       minRows: 1,
       fields: [
         {
-          name: 'blockType',
-          type: 'hidden',
-          defaultValue: 'defaultRow',
-        },
-        {
           name: 'cells',
           type: 'array',
           label: 'Cells',

@@ -28,6 +28,7 @@ import { FeaturesBlock } from '@/blocks/FeaturesBlock/Component'
 import { BannerBlock as BannerBlockComponent } from '@/blocks/BannerBlock/Component'
 import { AccordionBlock as AccordionBlockComponent } from '@/blocks/Accordion/Component'
 import { ParallaxTitleBlock } from '@/blocks/ParallaxTitleBlock/Component'
+import { DividerBlock } from '@/blocks/Divider/Component'
 
 type NodeTypes =
   | DefaultNodeTypes
@@ -66,6 +67,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     bannerBlock: ({ node }) => <BannerBlockComponent {...node.fields} />,
     accordion: ({ node }) => <AccordionBlockComponent {...node.fields} />,
     parallaxTitleBlock: ({ node }) => <ParallaxTitleBlock {...node.fields} />,
+    dividerBlock: ({ node }) => <DividerBlock {...node.fields} />,
   },
 })
 

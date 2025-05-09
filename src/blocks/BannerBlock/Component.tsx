@@ -4,7 +4,7 @@ import RichText from '@/components/RichText'
 
 type Props = {
   image: Media | string
-  alt: string
+  alt?: string | null
   content?: any
 }
 
@@ -18,7 +18,7 @@ export const BannerBlock: React.FC<Props> = ({ image, alt, content }) => {
         {imageUrl && (
           <img
             src={imageUrl}
-            alt={alt}
+            alt={alt || ''}
             className="
               object-cover h-full rounded
               w-full

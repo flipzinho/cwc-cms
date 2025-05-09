@@ -64,10 +64,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     callout: ({ node }) => <CalloutBlock {...node.fields} />,
     'features-block': ({ node }) => <FeaturesBlock {...node.fields} />,
     statement: ({ node }) => <StatementBlockComponent {...node.fields} />,
-    banner: ({ node }) => <BannerBlock className="col-start-2 mb-4" {...node.fields} />,
-    bannerBlock: ({ node }) => (
-      <BannerBlockComponent {...node.fields} alt={node.fields.alt ?? ''} />
-    ),
+    bannerBlock: ({ node }) => <BannerBlockComponent {...node.fields} />,
     accordion: ({ node }) => <AccordionBlockComponent {...node.fields} />,
     parallaxTitleBlock: ({ node }) => <ParallaxTitleBlock {...node.fields} />,
     table: ({ node }) => <TableBlockComponent {...node.fields} />,

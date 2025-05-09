@@ -34,21 +34,9 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   }, [])
 
   useEffect(() => {
-    let themeToSet: Theme = defaultTheme
-    const preference = window.localStorage.getItem(themeLocalStorageKey)
-
-    if (themeIsValid(preference)) {
-      themeToSet = preference
-    } else {
-      const implicitPreference = getImplicitPreference()
-
-      if (implicitPreference) {
-        themeToSet = implicitPreference
-      }
-    }
-
-    document.documentElement.setAttribute('data-theme', themeToSet)
-    setThemeState(themeToSet)
+    document.documentElement.setAttribute('data-theme', 'light')
+    window.localStorage.setItem(themeLocalStorageKey, 'light')
+    setThemeState('light')
   }, [])
 
   return <ThemeContext.Provider value={{ setTheme, theme }}>{children}</ThemeContext.Provider>

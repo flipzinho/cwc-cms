@@ -46,7 +46,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
   ...defaultConverters,
   ...LinkJSXConverter({ internalDocToHref }),
   blocks: {
-    mediaBlock: ({ node }) => (
+    mediaBlock: ({ node }: { node: any }) => (
       <MediaBlock
         className="col-start-1 col-span-3"
         imgClassName="m-0"
@@ -58,14 +58,14 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     ),
     code: ({ node }) => <CodeBlock className="col-start-2" {...node.fields} />,
     cta: ({ node }) => <CallToActionBlock {...node.fields} />,
-    quote: ({ node }) => <QuoteBlock {...node.fields} />,
-    callout: ({ node }) => <CalloutBlock {...node.fields} />,
-    'features-block': ({ node }) => <FeaturesBlock {...node.fields} />,
-    statement: ({ node }) => <StatementBlockComponent {...node.fields} />,
-    bannerBlock: ({ node }) => <BannerBlockComponent {...node.fields} />,
-    accordion: ({ node }) => <AccordionBlockComponent {...node.fields} />,
-    parallaxTitleBlock: ({ node }) => <ParallaxTitleBlock {...node.fields} />,
-    table: ({ node }) => <TableBlockComponent {...node.fields} />,
+    quote: ({ node }: { node: any }) => <QuoteBlock {...node.fields} />,
+    callout: ({ node }: { node: any }) => <CalloutBlock {...node.fields} />,
+    'features-block': ({ node }: { node: any }) => <FeaturesBlock {...node.fields} />,
+    statement: ({ node }: { node: any }) => <StatementBlockComponent {...node.fields} />,
+    bannerBlock: ({ node }: { node: any }) => <BannerBlockComponent {...node.fields} />,
+    accordion: ({ node }: { node: any }) => <AccordionBlockComponent {...node.fields} />,
+    parallaxTitleBlock: ({ node }: { node: any }) => <ParallaxTitleBlock {...node.fields} />,
+    table: ({ node }: { node: any }) => <TableBlockComponent {...node.fields} />,
   },
 })
 

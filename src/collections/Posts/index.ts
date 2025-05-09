@@ -34,7 +34,7 @@ import { BannerBlock } from '@/blocks/BannerBlock/config'
 import { AccordionBlock } from '@/blocks/Accordion/Config'
 import { ParallaxTitleBlock } from '@/blocks/ParallaxTitleBlock/config'
 import { TableBlock } from '@/blocks/Table/config'
-import { DividerBlock } from '@/blocks/Divider/config'
+import { DividerBlock } from '@/blocks/Divider/Config'
 
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',

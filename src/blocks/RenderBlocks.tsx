@@ -13,7 +13,7 @@ import { BannerBlock as BannerBlockComponent } from '@/blocks/BannerBlock/Compon
 import { ParallaxTitleBlock } from './ParallaxTitleBlock/Component'
 import { TableBlock as TableBlockComponent } from './Table/Component'
 
-const blockComponents = {
+const blockComponents: Record<string, React.ComponentType<any>> = {
   archive: ArchiveBlock,
   content: ContentBlock,
   cta: CallToActionBlock,

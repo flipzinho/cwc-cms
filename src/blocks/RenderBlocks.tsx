@@ -12,6 +12,7 @@ import { StatementBlock } from '@/blocks/Statement/Component'
 import { BannerBlock as BannerBlockComponent } from '@/blocks/BannerBlock/Component'
 import { ParallaxTitleBlock } from './ParallaxTitleBlock/Component'
 import { TableBlock as TableBlockComponent } from './Table/Component'
+import { DividerBlock as DividerBlockComponent } from '@/blocks/DividerBlock/Component'
 
 const blockComponents: Record<string, React.ComponentType<any>> = {
   archive: ArchiveBlock,
@@ -24,6 +25,7 @@ const blockComponents: Record<string, React.ComponentType<any>> = {
   bannerBlock: BannerBlockComponent,
   parallaxTitleBlock: ParallaxTitleBlock,
   table: TableBlockComponent,
+  dividerBlock: DividerBlockComponent,
 }
 
 export const RenderBlocks: React.FC<{

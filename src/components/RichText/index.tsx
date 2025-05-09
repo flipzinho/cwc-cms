@@ -14,6 +14,7 @@ import {
 import { CodeBlock, CodeBlockProps } from '@/blocks/Code/Component'
 import { StatementBlock as StatementBlockComponent } from '@/blocks/Statement/Component'
 import { TableBlock as TableBlockComponent } from '@/blocks/Table/Component'
+import { DividerBlock as DividerBlockComponent } from '@/blocks/DividerBlock/Component'
 
 import type {
   BannerBlock as BannerBlockProps,
@@ -66,6 +67,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     accordion: ({ node }: { node: any }) => <AccordionBlockComponent {...node.fields} />,
     parallaxTitleBlock: ({ node }: { node: any }) => <ParallaxTitleBlock {...node.fields} />,
     table: ({ node }: { node: any }) => <TableBlockComponent {...node.fields} />,
+    divider: ({ node }: { node: any }) => <DividerBlockComponent {...node.fields} />,
   },
 })
 

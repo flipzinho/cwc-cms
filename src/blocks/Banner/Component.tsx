@@ -6,6 +6,7 @@ import RichText from '@/components/RichText'
 
 type Props = {
   className?: string
+  content?: any
 } & BannerBlockProps
 
 export const BannerBlock: React.FC<Props> = ({ className, content, style }) => {

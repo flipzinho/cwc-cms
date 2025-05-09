@@ -11,8 +11,6 @@ import {
 
 import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
-import { Banner } from '../../blocks/Banner/config'
-import { Code } from '../../blocks/Code/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { QuoteBlock } from '../../blocks/Quote/config'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
@@ -34,7 +32,7 @@ import { BannerBlock } from '@/blocks/BannerBlock/config'
 import { AccordionBlock } from '@/blocks/Accordion/Config'
 import { ParallaxTitleBlock } from '@/blocks/ParallaxTitleBlock/config'
 import { TableBlock } from '@/blocks/Table/config'
-import { DividerBlock } from '@/blocks/Divider/Config'
+import { DividerBlock } from '@/blocks/Divider/config'
 
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',

@@ -33,6 +33,7 @@ import { AccordionBlock } from '@/blocks/Accordion/Config'
 import { ParallaxTitleBlock } from '@/blocks/ParallaxTitleBlock/config'
 import { TableBlock } from '@/blocks/Table/config'
 import { DividerBlock } from '@/blocks/DividerBlock/config'
+import SocialMediaEmbed from '@/blocks/SocialMediaEmbed/config'
 
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',
@@ -111,7 +112,8 @@ export const Posts: CollectionConfig<'posts'> = {
                       AccordionBlock,
                       ParallaxTitleBlock,
                       TableBlock,
-                      DividerBlock, // Adicionado DividerBlock
+                      DividerBlock, 
+                      SocialMediaEmbed
                     ],
                   }),
                   FixedToolbarFeature(),

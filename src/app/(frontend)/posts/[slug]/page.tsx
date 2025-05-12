@@ -15,6 +15,14 @@ import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
 
+// Função para calcular o tempo de leitura
+const calculateReadingTime = (content: any): number => {
+  const wordsPerMinute = 200; // Média de palavras lidas por minuto
+  const text = content?.root?.children?.map((child: any) => child.text).join(' ') || '';
+  const wordCount = text.split(' ').length;
+  return Math.ceil(wordCount / wordsPerMinute);
+};
+
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
   const posts = await payload.find({
@@ -49,6 +57,9 @@ export default async function Post({ params: paramsPromise }: Args) {
 
   if (!post) return <PayloadRedirects url={url} />
 
+  // Calcular o tempo de leitura
+  const readingTime = calculateReadingTime(post.content);
+
   return (
     <article className="pt-16 pb-16">
       <PageClient />
@@ -58,7 +69,7 @@ export default async function Post({ params: paramsPromise }: Args) {
 
       {draft && <LivePreviewListener />}
 
-      <PostHero post={post} />
+      <PostHero post={{ ...post }} />
 
       <div className="flex flex-col items-center gap-4 pt-8">
         <div className="container">

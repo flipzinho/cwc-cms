@@ -14,6 +14,7 @@ import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateDelete, revalidatePage } from './hooks/revalidatePage'
 import { QuoteBlock } from '@/blocks/Quote/config'
 import { ParallaxTitleBlock } from '@/blocks/ParallaxTitleBlock/config'
+import SocialMediaEmbed from '@/blocks/SocialMediaEmbed/config'
 
 import {
   MetaDescriptionField,
@@ -85,6 +86,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 FormBlock,
                 QuoteBlock,
                 ParallaxTitleBlock,
+                SocialMediaEmbed,
               ],
               required: true,
               admin: {

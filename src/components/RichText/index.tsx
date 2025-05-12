@@ -16,6 +16,7 @@ import { StatementBlock as StatementBlockComponent } from '@/blocks/Statement/Co
 import { TableBlock as TableBlockComponent } from '@/blocks/Table/Component'
 import { DividerBlock as DividerBlockComponent } from '@/blocks/DividerBlock/Component'
 import { RenderBlocks } from '@/blocks/RenderBlocks'
+import { ImageBlockComponent } from '@/blocks/ImageBlock/Component'
 
 import type {
   BannerBlock as BannerBlockProps,
@@ -70,10 +71,9 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     parallaxTitleBlock: ({ node }: { node: any }) => <ParallaxTitleBlock {...node.fields} />,
     table: ({ node }: { node: any }) => <TableBlockComponent {...node.fields} />,
     divider: ({ node }: { node: any }) => <DividerBlockComponent {...node.fields} />,
-    socialMediaEmbed: ({ node }: { node: any }) => (
-      <SocialMediaEmbed {...node.fields} />
-    ),
-  }
+    socialMediaEmbed: ({ node }: { node: any }) => <SocialMediaEmbed {...node.fields} />,
+    imageBlock: ({ node }: { node: any }) => <ImageBlockComponent {...node.fields} />,
+  },
 })
 
 type Props = {

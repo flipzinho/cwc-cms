@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import { formatDateTime } from 'src/utilities/formatDateTime'
 import React, { useMemo } from 'react'
@@ -9,10 +9,10 @@ import { formatAuthors } from '@/utilities/formatAuthors'
 
 // Ajustar a função para lidar com diferentes formatos de conteúdo
 const calculateReadingTime = (content: string): number => {
-  const wordsPerMinute = 200; // Média de palavras lidas por minuto
-  const wordCount = content.trim().split(/\s+/).length; // Contar palavras corretamente, ignorando espaços extras
-  return Math.ceil(wordCount / wordsPerMinute);
-};
+  const wordsPerMinute = 200 // Média de palavras lidas por minuto
+  const wordCount = content.trim().split(/\s+/).length // Contar palavras corretamente, ignorando espaços extras
+  return Math.ceil(wordCount / wordsPerMinute)
+}
 
 export const PostHero: React.FC<{
   post: Post
@@ -24,25 +24,26 @@ export const PostHero: React.FC<{
 
   // Ajustar o cálculo do tempo de leitura para garantir que o conteúdo seja extraído corretamente
   const readingTime = useMemo(() => {
-  // Verificar se o conteúdo está estruturado corretamente
-    const textContent = content?.root?.children
-      ?.map((child: any) => {
-        if (child.text) return child.text; // Extrair texto diretamente
-        if (child.children) {
-          // Recursivamente extrair texto de filhos
-          return child.children.map((nestedChild: any) => nestedChild.text || '').join(' ');
-        }
-        return '';
-      })
-      .join(' ') || '';
+    // Verificar se o conteúdo está estruturado corretamente
+    const textContent =
+      content?.root?.children
+        ?.map((child: any) => {
+          if (child.text) return child.text // Extrair texto diretamente
+          if (child.children) {
+            // Recursivamente extrair texto de filhos
+            return child.children.map((nestedChild: any) => nestedChild.text || '').join(' ')
+          }
+          return ''
+        })
+        .join(' ') || ''
 
-    return calculateReadingTime(textContent);
-  }, [content]);
+    return calculateReadingTime(textContent)
+  }, [content])
 
   return (
     <div className="relative -mt-[10.4rem] flex items-center">
-      <div className="absolute inset-0 bg-black opacity-50 z-0" /> 
-      <div className="container z-10 relative text-left lg:grid  text-white pb-8 px-4 md:px-8"> 
+      <div className="absolute inset-0 bg-black opacity-50 z-0" />
+      <div className="container z-10 relative text-left lg:grid  text-white pb-8 px-4 md:px-8">
         <div className="flex items-center gap-4 absolute -top-32 left-6 z-20">
           <a href="#" aria-label="Share on LinkedIn" className="hover:opacity-75">
             <img src="/media/icon-link.svg" alt="LinkedIn" className="w-8 h-8" />
@@ -65,7 +66,7 @@ export const PostHero: React.FC<{
                 return (
                   <span
                     key={index}
-                    className="px-[0.325rem] py-[0.325rem] bg-white text-black rounded-[0.575rem] border border-yellow-500 font-bold"
+                    className="px-[0.325rem] py-[0.325rem] bg-[#F8F5ED] text-[#322B1B] rounded-[0.575rem] border border-yellow-500 font-bold"
                   >
                     {titleToUse}
                   </span>
@@ -74,12 +75,10 @@ export const PostHero: React.FC<{
               return null
             })}
           </div>
- 
+
           <div className="">
             <h1 className="mb-6 text-3xl md:text-5xl lg:text-6xl font-bold">{title}</h1>
           </div>
-
-        
 
           <div className="flex flex-col md:flex-row gap-4 md:gap-16">
             {hasAuthors && (
@@ -88,14 +87,18 @@ export const PostHero: React.FC<{
                 <span className="mx-2">•</span>
                 {publishedAt && (
                   <time dateTime={publishedAt}>
-                    Published {new Date(publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} 
+                    Published{' '}
+                    {new Date(publishedAt).toLocaleDateString('en-US', {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}
                   </time>
                 )}
               </div>
             )}
           </div>
         </div>
-        
       </div>
       <div id="content" className="min-h-[80vh] select-none">
         {heroImage && typeof heroImage !== 'string' && (

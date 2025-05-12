@@ -330,3 +330,8 @@ p br {
   content: "";
 }
 
+.prose :where(img):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-bottom: 8px !important;
+  margin-top: 8px !important; /* ou ajuste conforme necessário */
+}
+

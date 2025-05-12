@@ -353,6 +353,12 @@ export interface Page {
         blockType: 'quote';
       }
     | ParallaxTitleBlock
+    | {
+        url: string;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'socialMediaEmbed';
+      }
   )[];
   meta?: {
     title?: string | null;
@@ -1109,6 +1115,13 @@ export interface PagesSelect<T extends boolean = true> {
               blockName?: T;
             };
         parallaxTitleBlock?: T | ParallaxTitleBlockSelect<T>;
+        socialMediaEmbed?:
+          | T
+          | {
+              url?: T;
+              id?: T;
+              blockName?: T;
+            };
       };
   meta?:
     | T

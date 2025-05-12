@@ -13,6 +13,7 @@ import { BannerBlock as BannerBlockComponent } from '@/blocks/BannerBlock/Compon
 import { ParallaxTitleBlock } from './ParallaxTitleBlock/Component'
 import { TableBlock as TableBlockComponent } from './Table/Component'
 import { DividerBlock as DividerBlockComponent } from '@/blocks/DividerBlock/Component'
+import { SocialMediaEmbed } from '@/blocks/SocialMediaEmbed/Component'
 
 const blockComponents: Record<string, React.ComponentType<any>> = {
   archive: ArchiveBlock,
@@ -26,6 +27,7 @@ const blockComponents: Record<string, React.ComponentType<any>> = {
   parallaxTitleBlock: ParallaxTitleBlock,
   table: TableBlockComponent,
   dividerBlock: DividerBlockComponent,
+  socialMediaEmbed: SocialMediaEmbed,
 }
 
 export const RenderBlocks: React.FC<{

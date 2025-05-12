@@ -15,7 +15,7 @@ export const QuoteBlock: React.FC<QuoteBlockProps> = ({ quoteText, author, role,
     <div
       className="
         flex flex-col
-        p-8
+        p-4
         rounded-xl
         border border-solid border-[#bebebe]
         bg-[#f8f8f8]

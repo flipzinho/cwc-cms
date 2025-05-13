@@ -43,8 +43,8 @@ export const PostHero: React.FC<{
   return (
     <div className="relative -mt-[10.4rem] flex items-center">
       <div className="absolute inset-0 bg-black opacity-50 z-0" />
-      <div className="container z-10 relative text-left lg:grid  text-white pb-8 px-4 md:px-8">
-        <div className="flex items-center gap-[6px] absolute -top-[6rem] left-6 z-20">
+      <div className="container z-10 relative text-left lg:flex text-white pb-8 px-4 md:px-8">
+        <div className="flex items-center gap-[6px] absolute -top-[6rem] left-[2.1rem] z-20">
           <a href="#" aria-label="Share on LinkedIn" className="hover:opacity-75">
             <img src="/icons/linkedin.svg" alt="LinkedIn" className="w-6 h-6" />
           </a>
@@ -55,7 +55,7 @@ export const PostHero: React.FC<{
             <img src="/icons/instagram.svg" alt="Instagram" className="w-6 h-6" />
           </a>
         </div>
-        <div className="col-start-1 col-span-1 md:col-start-2 md:col-span-2 w-[60%]">
+        <div className="w-[60%] text-left">
           <div className="flex gap-2 mb-6">
             {categories?.map((category, index) => {
               if (typeof category === 'object' && category !== null) {
@@ -76,7 +76,7 @@ export const PostHero: React.FC<{
             })}
           </div>
 
-          <div className="">
+          <div>
             <h1
               className="
                 mb-6
@@ -86,6 +86,7 @@ export const PostHero: React.FC<{
                 font-bold
                 leading-[76.8px]
                 tracking-[-0.08em]
+                text-left
               "
             >
               {title}

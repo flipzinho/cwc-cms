@@ -15,6 +15,7 @@ import { TableBlock as TableBlockComponent } from './Table/Component'
 import { DividerBlock as DividerBlockComponent } from '@/blocks/DividerBlock/Component'
 import { SocialMediaEmbed } from '@/blocks/SocialMediaEmbed/Component'
 import { ImageBlockComponent } from '@/blocks/ImageBlock/Component'
+import { GalleryBlock } from '@/blocks/Gallery/Component'
 
 const blockComponents: Record<string, React.ComponentType<any>> = {
   archive: ArchiveBlock,
@@ -30,6 +31,7 @@ const blockComponents: Record<string, React.ComponentType<any>> = {
   dividerBlock: DividerBlockComponent,
   socialMediaEmbed: SocialMediaEmbed,
   imageBlock: ImageBlockComponent,
+  gallery: GalleryBlock,
 }
 
 export const RenderBlocks: React.FC<{

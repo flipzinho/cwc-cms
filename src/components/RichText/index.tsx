@@ -17,6 +17,7 @@ import { TableBlock as TableBlockComponent } from '@/blocks/Table/Component'
 import { DividerBlock as DividerBlockComponent } from '@/blocks/DividerBlock/Component'
 import { RenderBlocks } from '@/blocks/RenderBlocks'
 import { ImageBlockComponent } from '@/blocks/ImageBlock/Component'
+import { GalleryBlock } from '@/blocks/Gallery/Component'
 
 import type {
   BannerBlock as BannerBlockProps,
@@ -73,6 +74,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
     divider: ({ node }: { node: any }) => <DividerBlockComponent {...node.fields} />,
     socialMediaEmbed: ({ node }: { node: any }) => <SocialMediaEmbed {...node.fields} />,
     imageBlock: ({ node }: { node: any }) => <ImageBlockComponent {...node.fields} />,
+    gallery: ({ node }: { node: any }) => <GalleryBlock {...node.fields} />,
   },
 })
 

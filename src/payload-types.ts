@@ -1784,6 +1784,42 @@ export interface BannerBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "DividerBlock".
+ */
+export interface DividerBlock {
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'divider';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "GalleryBlock".
+ */
+export interface GalleryBlock {
+  images?:
+    | {
+        media: string | Media;
+        alt?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'gallery';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ImageBlock".
+ */
+export interface ImageBlock {
+  image: string | Media;
+  description?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'imageBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "TableBlock".
  */
 export interface TableBlock {
@@ -1925,26 +1961,6 @@ export interface TableBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'table';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "DividerBlock".
- */
-export interface DividerBlock {
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'divider';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ImageBlock".
- */
-export interface ImageBlock {
-  image: string | Media;
-  description?: string | null;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'imageBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

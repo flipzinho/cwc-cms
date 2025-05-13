@@ -35,6 +35,7 @@ import { TableBlock } from '@/blocks/Table/config'
 import { DividerBlock } from '@/blocks/DividerBlock/config'
 import SocialMediaEmbed from '@/blocks/SocialMediaEmbed/config'
 import { ImageBlock } from '../../blocks/ImageBlock/config'
+import { GalleryBlock } from '../../blocks/Gallery/config'
 
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',
@@ -104,18 +105,19 @@ export const Posts: CollectionConfig<'posts'> = {
                   HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
                   BlocksFeature({
                     blocks: [
-                      BannerBlock,
-                      MediaBlock,
-                      QuoteBlock,
-                      Callout,
-                      FeaturesBlock,
-                      StatementBlock,
                       AccordionBlock,
-                      ParallaxTitleBlock,
-                      TableBlock,
+                      BannerBlock,
+                      Callout,
                       DividerBlock,
-                      SocialMediaEmbed,
+                      FeaturesBlock,
+                      GalleryBlock,
                       ImageBlock,
+                      MediaBlock,
+                      ParallaxTitleBlock,
+                      QuoteBlock,
+                      SocialMediaEmbed,
+                      StatementBlock,
+                      TableBlock,
                     ],
                   }),
                   FixedToolbarFeature(),

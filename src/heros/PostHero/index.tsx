@@ -44,18 +44,18 @@ export const PostHero: React.FC<{
     <div className="relative -mt-[10.4rem] flex items-center">
       <div className="absolute inset-0 bg-black opacity-50 z-0" />
       <div className="container z-10 relative text-left lg:grid  text-white pb-8 px-4 md:px-8">
-        <div className="flex items-center gap-4 absolute -top-32 left-6 z-20">
+        <div className="flex items-center gap-[6px] absolute -top-[6rem] left-6 z-20">
           <a href="#" aria-label="Share on LinkedIn" className="hover:opacity-75">
-            <img src="/media/icon-link.svg" alt="LinkedIn" className="w-8 h-8" />
+            <img src="/icons/linkedin.svg" alt="LinkedIn" className="w-6 h-6" />
           </a>
           <a href="#" aria-label="Share this post" className="hover:opacity-75">
-            <img src="/media/icon.svg" alt="Share" className="w-8 h-8" />
+            <img src="/icons/link.svg" alt="Share" className="w-6 h-6" />
           </a>
           <a href="#" aria-label="Share on Instagram" className="hover:opacity-75">
-            <img src="/media/icon-ig.svg" alt="Instagram" className="w-8 h-8" />
+            <img src="/icons/instagram.svg" alt="Instagram" className="w-6 h-6" />
           </a>
         </div>
-        <div className="col-start-1 col-span-1 md:col-start-2 md:col-span-2">
+        <div className="col-start-1 col-span-1 md:col-start-2 md:col-span-2 w-[60%]">
           <div className="flex gap-2 mb-6">
             {categories?.map((category, index) => {
               if (typeof category === 'object' && category !== null) {
@@ -77,7 +77,19 @@ export const PostHero: React.FC<{
           </div>
 
           <div className="">
-            <h1 className="mb-6 text-3xl md:text-5xl lg:text-6xl font-bold">{title}</h1>
+            <h1
+              className="
+                mb-6
+                text-white
+                font-inter
+                text-[64px]
+                font-bold
+                leading-[76.8px]
+                tracking-[-0.08em]
+              "
+            >
+              {title}
+            </h1>
           </div>
 
           <div className="flex flex-col md:flex-row gap-4 md:gap-16">
@@ -101,7 +113,7 @@ export const PostHero: React.FC<{
         </div>
       </div>
       <div id="content" className="min-h-[80vh] select-none">
-        {heroImage && typeof heroImage !== 'string' && (
+        {heroImage && (
           <Media fill priority imgClassName="-z-10 object-cover" resource={heroImage} />
         )}
         <div className="absolute pointer-events-none left-0 bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent" />
@@ -109,10 +121,10 @@ export const PostHero: React.FC<{
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center">
         <button
           onClick={() => document.getElementById('content')?.scrollIntoView({ behavior: 'smooth' })}
-          className="text-sm text-white font-medium flex items-center gap-2"
+          className="text-[14px] leading-[19.6px] tracking-[-0.28px] text-[#D3D3D3] font-sans font-semibold flex items-center gap-2 pb-[34px]"
         >
           {readingTime} min Read
-          <img src="/media/icon-arrow-down.svg" alt="Arrow Down" className="w-4 h-4" />
+          <img src="/icons/arrow-down-s-line.svg" alt="Arrow Down" className="w-4 h-4" />
         </button>
       </div>
     </div>

@@ -17,11 +17,11 @@ import { LivePreviewListener } from '@/components/LivePreviewListener'
 
 // Função para calcular o tempo de leitura
 const calculateReadingTime = (content: any): number => {
-  const wordsPerMinute = 200; // Média de palavras lidas por minuto
-  const text = content?.root?.children?.map((child: any) => child.text).join(' ') || '';
-  const wordCount = text.split(' ').length;
-  return Math.ceil(wordCount / wordsPerMinute);
-};
+  const wordsPerMinute = 200 // Média de palavras lidas por minuto
+  const text = content?.root?.children?.map((child: any) => child.text).join(' ') || ''
+  const wordCount = text.split(' ').length
+  return Math.ceil(wordCount / wordsPerMinute)
+}
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -58,10 +58,10 @@ export default async function Post({ params: paramsPromise }: Args) {
   if (!post) return <PayloadRedirects url={url} />
 
   // Calcular o tempo de leitura
-  const readingTime = calculateReadingTime(post.content);
+  const readingTime = calculateReadingTime(post.content)
 
   return (
-    <article className="pt-16 pb-16">
+    <article className="pt-24 pb-16">
       <PageClient />
 
       {/* Allows redirects for valid pages too */}

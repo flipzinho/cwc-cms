@@ -2,7 +2,7 @@
 
 // Adicionada a diretiva para transformar este arquivo em um Client Component.
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 
 // Carregar react-player dinamicamente para evitar problemas de SSR
@@ -29,6 +29,8 @@ function isTwitterPost(url: string) {
 }
 
 export const SocialMediaEmbed: React.FC<{ url: string }> = ({ url }) => {
+  const twitterRef = React.useRef<HTMLQuoteElement>(null);
+
   if (!url) return null;
 
   if (isYouTubeOrVimeo(url)) {
@@ -93,8 +95,30 @@ export const SocialMediaEmbed: React.FC<{ url: string }> = ({ url }) => {
   }
 
   if (isTwitterPost(url)) {
+    React.useEffect(() => {
+      if (!document.getElementById('twitter-wjs')) {
+        const script = document.createElement('script');
+        script.id = 'twitter-wjs';
+        script.src = 'https://platform.twitter.com/widgets.js';
+        script.async = true;
+        document.body.appendChild(script);
+        script.onload = () => {
+          // @ts-ignore
+          if (window.twttr && window.twttr.widgets && twitterRef.current) {
+            // @ts-ignore
+            window.twttr.widgets.load(twitterRef.current.parentNode);
+          }
+        };
+      } else {
+        // @ts-ignore
+        if (window.twttr && window.twttr.widgets && twitterRef.current) {
+          // @ts-ignore
+          window.twttr.widgets.load(twitterRef.current.parentNode);
+        }
+      }
+    }, [url]);
     return (
-      <blockquote className="twitter-tweet">
+      <blockquote ref={twitterRef} className="twitter-tweet">
         <a href={url}>{url}</a>
       </blockquote>
     );
@@ -103,7 +127,7 @@ export const SocialMediaEmbed: React.FC<{ url: string }> = ({ url }) => {
   // Fallback: mensagem amigável
   return (
     <div className="social-media-embed">
-      <span>Não foi possível embedar este conteúdo. <a href={url} target="_blank" rel="noopener noreferrer">Ver no Facebook</a></span>
+      <span>Unable to embed this content. <a href={url} target="_blank" rel="noopener noreferrer">View on Facebook</a></span>
     </div>
   );
 };

@@ -18,6 +18,7 @@ import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 import { QuoteBlock } from './blocks/Quote/config'
 import { StatementBlock } from './blocks/Statement/config'
+import { s3StoragePlugin } from './storage/s3'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -71,6 +72,7 @@ export default buildConfig({
   globals: [Header, Footer],
   plugins: [
     ...plugins,
+    s3StoragePlugin,
     // storage-adapter-placeholder
   ],
   secret: process.env.PAYLOAD_SECRET,

@@ -8,7 +8,7 @@ import type { Post } from '@/payload-types'
 
 import { Media } from '@/components/Media'
 
-export type CardPostData = Pick<Post, 'slug' | 'categories' | 'meta' | 'title'>
+export type CardPostData = Pick<Post, 'slug' | 'categories' | 'meta' | 'title' | 'heroImage'>
 
 export const Card: React.FC<{
   alignItems?: 'center'
@@ -21,7 +21,7 @@ export const Card: React.FC<{
   const { card, link } = useClickableCard({})
   const { className, doc, relationTo, showCategories, title: titleFromProps } = props
 
-  const { slug, categories, meta, title } = doc || {}
+  const { slug, categories, meta, title, heroImage } = doc || {}
   const { description, image: metaImage } = meta || {}
 
   const hasCategories = categories && Array.isArray(categories) && categories.length > 0
@@ -37,41 +37,47 @@ export const Card: React.FC<{
       )}
       ref={card.ref}
     >
-      <div className="relative w-full ">
-        {!metaImage && <div className="">No image</div>}
-        {metaImage && typeof metaImage !== 'string' && <Media resource={metaImage} size="33vw" />}
-      </div>
-      <div className="p-4">
-        {showCategories && hasCategories && (
-          <div className="uppercase text-sm mb-4">
-            {showCategories && hasCategories && (
-              <div>
-                {categories?.map((category, index) => {
-                  if (typeof category === 'object') {
-                    const { title: titleFromCategory } = category
-
-                    const categoryTitle = titleFromCategory || 'Untitled category'
-
-                    const isLast = index === categories.length - 1
-
-                    return (
-                      <Fragment key={index}>
-                        {categoryTitle}
-                        {!isLast && <Fragment>, &nbsp;</Fragment>}
-                      </Fragment>
-                    )
-                  }
-
-                  return null
-                })}
-              </div>
-            )}
+      {/* <div className="relative w-full ">
+        {heroImage && typeof heroImage !== 'string' && <Media resource={heroImage} size="33vw" />}
+        {!heroImage && metaImage && typeof metaImage !== 'string' && (
+          <Media resource={metaImage} size="33vw" />
+        )}
+        {!heroImage && !metaImage && (
+          <div
+            className="w-full bg-gray-100 flex items-center justify-center"
+            style={{ aspectRatio: '16/9', minHeight: 120 }}
+          >
           </div>
         )}
+      </div> */}
+      <div className="p-4">
+        <div
+          className="uppercase text-sm mb-4"
+          style={{ minHeight: 24 }} // ajuste a altura conforme necessário
+        >
+          {showCategories && hasCategories ? (
+            <div>
+              {categories?.map((category, index) => {
+                if (typeof category === 'object') {
+                  const { title: titleFromCategory } = category
+                  const categoryTitle = titleFromCategory || 'Untitled category'
+                  const isLast = index === categories.length - 1
+                  return (
+                    <Fragment key={index}>
+                      {categoryTitle}
+                      {!isLast && <Fragment>, &nbsp;</Fragment>}
+                    </Fragment>
+                  )
+                }
+                return null
+              })}
+            </div>
+          ) : null}
+        </div>
         {titleToUse && (
           <div className="prose">
             <h3>
-              <Link className="not-prose" href={href} ref={link.ref}>
+              <Link className="not-prose card-title-link" href={href} ref={link.ref}>
                 {titleToUse}
               </Link>
             </h3>

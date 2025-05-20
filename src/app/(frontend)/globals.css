@@ -335,3 +335,30 @@ p br {
   margin-top: 8px !important; /* ou ajuste conforme necessário */
 }
 
+.card-title-link {
+  color: #AC9347 !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-family: inherit;
+}
+.card-title-link:hover,
+.card-title-link:focus {
+  color: #847036 !important;
+  text-decoration: none !important;
+}
+
+  .btn {
+    background-color: #9b8242;
+  }
+  .form-submit .btn {
+    background-color: #9b8242 !important;
+    color: #fff !important;
+    border: none !important;
+  }
+  .form-submit .btn:hover,
+  .form-submit .btn:focus {
+    background-color: #7a672f !important;
+    color: #fff !important;
+  }
+
+

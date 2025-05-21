@@ -47,7 +47,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
                   format: 0,
                   mode: 'normal',
                   style: '',
-                  text: 'Payload Website Template',
+                  text: 'Canadian Wood Council',
                   version: 1,
                 },
               ],
@@ -666,9 +666,9 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
       },
     ],
     meta: {
-      description: 'An open-source website built with Payload and Next.js.',
+      description: 'An Canadian Wood Council portal. ',
       image: heroImage.id,
-      title: 'Payload Website Template',
+      title: 'Canadian Wood Council',
     },
     title: 'Home',
   }

@@ -11,7 +11,7 @@ type Cell = {
   // Campos extras para author
   name?: string
   role?: string
-  media?: any
+  media?: { url?: string } // Specify type instead of any
   // Novo campo para subtipo de texto
   textSubtype?: 'bold' | 'medium' | 'normal'
   percent?: number // 0-100, só para type 'views'

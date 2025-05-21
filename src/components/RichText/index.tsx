@@ -15,7 +15,6 @@ import { CodeBlock, CodeBlockProps } from '@/blocks/Code/Component'
 import { StatementBlock as StatementBlockComponent } from '@/blocks/Statement/Component'
 import { TableBlock as TableBlockComponent } from '@/blocks/Table/Component'
 import { DividerBlock as DividerBlockComponent } from '@/blocks/DividerBlock/Component'
-import { RenderBlocks } from '@/blocks/RenderBlocks'
 import { ImageBlockComponent } from '@/blocks/ImageBlock/Component'
 import { GalleryBlock } from '@/blocks/Gallery/Component'
 
@@ -51,7 +50,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
   ...defaultConverters,
   ...LinkJSXConverter({ internalDocToHref }),
   blocks: {
-    mediaBlock: ({ node }: { node: any }) => (
+    mediaBlock: ({ node }: { node: { fields: any } }) => (
       <MediaBlock
         className="col-start-1 col-span-3"
         imgClassName="m-0"
@@ -61,20 +60,30 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
         disableInnerContainer={true}
       />
     ),
-    code: ({ node }) => <CodeBlock className="col-start-2" {...node.fields} />,
-    cta: ({ node }) => <CallToActionBlock {...node.fields} />,
-    quote: ({ node }: { node: any }) => <QuoteBlock {...node.fields} />,
-    callout: ({ node }: { node: any }) => <CalloutBlock {...node.fields} />,
-    'features-block': ({ node }: { node: any }) => <FeaturesBlock {...node.fields} />,
-    statement: ({ node }: { node: any }) => <StatementBlockComponent {...node.fields} />,
-    bannerBlock: ({ node }: { node: any }) => <BannerBlockComponent {...node.fields} />,
-    accordion: ({ node }: { node: any }) => <AccordionBlockComponent {...node.fields} />,
-    parallaxTitleBlock: ({ node }: { node: any }) => <ParallaxTitleBlock {...node.fields} />,
-    table: ({ node }: { node: any }) => <TableBlockComponent {...node.fields} />,
-    divider: ({ node }: { node: any }) => <DividerBlockComponent {...node.fields} />,
-    socialMediaEmbed: ({ node }: { node: any }) => <SocialMediaEmbed {...node.fields} />,
-    imageBlock: ({ node }: { node: any }) => <ImageBlockComponent {...node.fields} />,
-    gallery: ({ node }: { node: any }) => <GalleryBlock {...node.fields} />,
+    code: ({ node }: { node: { fields: any } }) => (
+      <CodeBlock className="col-start-2" {...node.fields} />
+    ),
+    cta: ({ node }: { node: { fields: any } }) => <CallToActionBlock {...node.fields} />,
+    quote: ({ node }: { node: { fields: any } }) => <QuoteBlock {...node.fields} />,
+    callout: ({ node }: { node: { fields: any } }) => <CalloutBlock {...node.fields} />,
+    'features-block': ({ node }: { node: { fields: any } }) => <FeaturesBlock {...node.fields} />,
+    statement: ({ node }: { node: { fields: any } }) => (
+      <StatementBlockComponent {...node.fields} />
+    ),
+    bannerBlock: ({ node }: { node: { fields: any } }) => <BannerBlockComponent {...node.fields} />,
+    accordion: ({ node }: { node: { fields: any } }) => (
+      <AccordionBlockComponent {...node.fields} />
+    ),
+    parallaxTitleBlock: ({ node }: { node: { fields: any } }) => (
+      <ParallaxTitleBlock {...node.fields} />
+    ),
+    table: ({ node }: { node: { fields: any } }) => <TableBlockComponent {...node.fields} />,
+    divider: ({ node }: { node: { fields: any } }) => <DividerBlockComponent {...node.fields} />,
+    socialMediaEmbed: ({ node }: { node: { fields: any } }) => (
+      <SocialMediaEmbed {...node.fields} />
+    ),
+    imageBlock: ({ node }: { node: { fields: any } }) => <ImageBlockComponent {...node.fields} />,
+    gallery: ({ node }: { node: { fields: any } }) => <GalleryBlock {...node.fields} />,
   },
 })
 

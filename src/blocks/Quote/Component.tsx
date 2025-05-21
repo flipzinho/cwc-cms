@@ -1,13 +1,12 @@
 import React from 'react'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
-import { Media } from '@/components/Media'
 
 type QuoteBlockProps = {
   quoteText: SerializedEditorState
   author?: string
   role?: string
-  avatar?: any // Payload media object
+  avatar?: { url?: string } // Specify type instead of any
 }
 
 export const QuoteBlock: React.FC<QuoteBlockProps> = ({ quoteText, author, role, avatar }) => {

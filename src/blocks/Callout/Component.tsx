@@ -3,10 +3,9 @@ import React from 'react'
 type CalloutBlockProps = {
   title?: string
   content: string
-  icon?: string
 }
 
-export const CalloutBlock: React.FC<CalloutBlockProps> = ({ title, content, icon }) => {
+export const CalloutBlock: React.FC<CalloutBlockProps> = ({ title, content }) => {
   return (
     <div className="flex justify-center">
       <div className="w-[90%] bg-[#F4EFDB] rounded-[16px] p-8 font-sans">

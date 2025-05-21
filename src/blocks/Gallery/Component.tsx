@@ -13,10 +13,8 @@ type GalleryBlockProps = {
 }
 
 export const GalleryBlock: React.FC<GalleryBlockProps> = ({ images = [], className }) => {
-  if (!images || images.length === 0) return null
-
+  // Always call hooks at the top
   const [isMobile375, setIsMobile375] = React.useState(false)
-  // Estado para controlar imagem em tela cheia
   const [fullscreenImg, setFullscreenImg] = React.useState<Media | null>(null)
 
   React.useEffect(() => {
@@ -26,15 +24,18 @@ export const GalleryBlock: React.FC<GalleryBlockProps> = ({ images = [], classNa
     return () => window.removeEventListener('resize', check)
   }, [])
 
+  if (!images || images.length === 0) return null
+
   // Ajuste para grid dinâmico
-  let gridClass = `
+  const baseGridClass = `
     grid 
     gap-6 
     !gap-[12px]
     px-0
   `
-  let gridStyle: React.CSSProperties = { gap: 12 }
+  const gridStyle: React.CSSProperties = { gap: 12 }
 
+  let gridClass = baseGridClass
   if (images.length === 1) {
     gridClass += ' grid-cols-1'
   } else if (images.length === 2) {
